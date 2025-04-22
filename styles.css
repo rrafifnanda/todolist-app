@@ -1,0 +1,251 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f4f4f4;
+    color: #333;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 20px;
+    transition: background-color 0.3s, color 0.3s;
+  }
+  
+  body.dark-mode {
+    background-color: #2b2b2b;
+    color: #f4f4f4;
+  }
+  
+  .app {
+    width: 100%;
+    max-width: 600px;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 10px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+    max-height: 90vh;
+    overflow-y: auto;
+    transition: background-color 0.3s;
+  }
+  
+  body.dark-mode .app {
+    background-color: #3a3a3a;
+  }
+  
+  /*ini buat katergorinya*/
+  .categories {
+    display: flex;
+    justify-content: space-around;
+    margin-bottom: 25px;
+  }
+  
+  .category {
+    background-color: #e9ecef;
+    padding: 10px 15px;
+    border-radius: 6px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.3s;
+  }
+  
+  .category:hover {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* kategori aktif */
+  .category.active {
+    background-color: #007bff;
+    color: white;
+  }
+  
+  /* nambahin tugas */
+  .add-task {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 30px;
+  }
+  
+  .form-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  #darkModeToggle {
+    background: none;
+    border: none;
+    font-size: 20px;
+    cursor: pointer;
+    color: inherit;
+    transition: transform 0.2s ease;
+  }
+  
+  #darkModeToggle:hover {
+    transform: scale(1.2);
+  }
+  
+  .add-task input,
+  .add-task select,
+  .add-task button {
+    padding: 10px;
+    margin: 8px 0;
+    font-size: 16px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+  }
+  
+  .add-task button {
+    background-color: #28a745;
+    color: white;
+    font-weight: bold;
+    border: none;
+    cursor: pointer;
+  }
+  
+  .add-task button:hover {
+    background-color: #218838;
+  }
+  
+  /* daftar tugas */
+  .task-list h3 {
+    margin-bottom: 10px;
+  }
+  
+  ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  li {
+    background-color: #f9f9f9;
+    color: #333;
+    padding: 12px 15px;
+    margin-bottom: 10px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: 0.3s;
+  }
+  
+  li:hover {
+    background-color: #f1f1f1;
+  }
+  
+  /* priotas tugas */
+  .priority {
+    padding: 4px 8px;
+    border-radius: 4px;
+    font-size: 12px;
+    text-transform: capitalize;
+    color: white;
+  }
+  
+  .low .priority {
+    background-color: #28a745;
+  }
+  
+  .medium .priority {
+    background-color: #ffc107;
+    color: #333;
+  }
+  
+  .high .priority {
+    background-color: #dc3545;
+  }
+  
+  /* logo tong sampah */
+  .delete-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #dc3545;
+    margin-left: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .delete-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  body.dark-mode .delete-btn {
+    color: #f8d7da;
+  }
+  
+  /* tema gelap layout */
+  body.dark-mode li {
+    background-color: #444;
+    color: #f1f1f1;
+  }
+  
+  body.dark-mode li:hover {
+    background-color: #555;
+  }
+  
+  body.dark-mode .medium .priority {
+    color: #000;
+  }
+  
+  /* responsivitas */
+  @media (max-width: 600px) {
+    .app {
+      padding: 15px;
+    }
+  
+    button, input, select {
+      font-size: 14px;
+    }
+  }
+  /* buat task yang udah */
+.completed {
+    text-decoration: line-through;
+    background-color: #d6e9c6; /* Light green background for completed tasks */
+    color: #6c757d; /* Gray color for completed text */
+  }
+  
+  /* merubah jadi hijau kalo udah */
+  .complete-btn {
+    background: none;
+    border: none;
+    font-size: 18px;
+    cursor: pointer;
+    color: #28a745; /* Green color */
+    margin-left: 10px;
+    transition: transform 0.2s;
+  }
+  
+  .complete-btn:hover {
+    transform: scale(1.2);
+  }
+  
+  /* tema gelap kalo udah tugasnya */
+  body.dark-mode .completed {
+    background-color: #4a5b2b;
+    color: #f8d7da;
+  }
+  /* wm */
+.footer {
+  position: fixed;
+  bottom: 10px;
+  right: 20px;
+  font-size: 12px;
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.5);
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-family: 'Arial', sans-serif;
+  z-index: 9999;
+}
+
+body.dark-mode .footer {
+  color: rgba(255, 255, 255, 0.7);
+  background-color: rgba(0, 0, 0, 0.8);
+}

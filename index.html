@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>To-Do List App</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+  <div class="app">
+
+    <!-- Categories -->
+    <div class="categories">
+      <button class="category" data-category="work">Work</button>
+      <button class="category" data-category="personal">Personal</button>
+      <button class="category" data-category="school">School</button>
+    </div>
+
+    <!-- Add Task -->
+    <div class="add-task">
+      <div class="form-header">
+        <h3>Add New Task</h3>
+        <button id="darkModeToggle" title="Toggle Dark Mode">🌙</button>
+      </div>
+      <input type="text" id="taskName" placeholder="Task Name" required />
+      <input type="date" id="taskDeadline" required />
+      <select id="taskPriority">
+        <option value="low">Low</option>
+        <option value="medium">Medium</option>
+        <option value="high">High</option>
+      </select>
+      <button id="addTaskBtn">Add Task</button>
+    </div>
+
+    <!-- Task List -->
+    <div class="task-list">
+      <h3>Task List</h3>
+      <ul id="taskList"></ul>
+    </div>
+</div>
+
+<footer class="footer">
+    <p>Made by @rrafifnanda</p>
+  </footer>
+  
+
+  <script src="script.js"></script>
+</body>
+</html>
